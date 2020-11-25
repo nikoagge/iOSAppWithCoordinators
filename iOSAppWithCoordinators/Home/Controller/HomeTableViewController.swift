@@ -10,6 +10,7 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     var friendsArray = [Friend]()
+    var selectedFriend: Int? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +37,18 @@ class HomeTableViewController: UITableViewController {
         guard let friendTableViewController = UIStoryboard(name: "Friend", bundle: nil).instantiateViewController(identifier: "FriendTableViewController") as? FriendTableViewController else {
             fatalError("Unable to create FriendTableViewController")
         }
+        selectedFriend = position
         friendTableViewController.homeTableViewControllerDelegate = self
         friendTableViewController.friend = friend
         
         navigationController?.pushViewController(friendTableViewController, animated: true)
+    }
+    
+    func update(friend: Friend) {
+        guard let selectedFriend = selectedFriend else { return }
+        friendsArray[selectedFriend] = friend
+        tableView.reloadData()
+        saveData()
     }
     
     @objc private func addFriend() {
@@ -58,7 +67,10 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = friendsArray[indexPath.row].name
-        cell.detailTextLabel?.text = friendsArray[indexPath.row].timeZone.identifier
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = friendsArray[indexPath.row].timeZone
+        dateFormatter.timeStyle = .short
+        cell.detailTextLabel?.text = dateFormatter.string(from: Date())
         
         return cell
     }
