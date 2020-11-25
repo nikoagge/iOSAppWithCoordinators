@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		1755A51F256EC03C00BE6A12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1755A51E256EC03C00BE6A12 /* AppDelegate.swift */; };
 		1755A521256EC03C00BE6A12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1755A520256EC03C00BE6A12 /* SceneDelegate.swift */; };
-		1755A523256EC03C00BE6A12 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1755A522256EC03C00BE6A12 /* HomeViewController.swift */; };
+		1755A523256EC03C00BE6A12 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1755A522256EC03C00BE6A12 /* HomeTableViewController.swift */; };
 		1755A526256EC03C00BE6A12 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1755A524256EC03C00BE6A12 /* Home.storyboard */; };
 		1755A528256EC03E00BE6A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1755A527256EC03E00BE6A12 /* Assets.xcassets */; };
 		1755A52B256EC03E00BE6A12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1755A529256EC03E00BE6A12 /* LaunchScreen.storyboard */; };
+		1755A542256EC55A00BE6A12 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1755A541256EC55A00BE6A12 /* Friend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1755A51B256EC03C00BE6A12 /* iOSAppWithCoordinators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppWithCoordinators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1755A51E256EC03C00BE6A12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1755A520256EC03C00BE6A12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1755A522256EC03C00BE6A12 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1755A522256EC03C00BE6A12 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		1755A525256EC03C00BE6A12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		1755A527256EC03E00BE6A12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1755A52A256EC03E00BE6A12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1755A52C256EC03E00BE6A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1755A541256EC55A00BE6A12 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +129,7 @@
 		1755A53A256EC1BF00BE6A12 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1755A522256EC03C00BE6A12 /* HomeViewController.swift */,
+				1755A522256EC03C00BE6A12 /* HomeTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +145,7 @@
 		1755A53C256EC1CB00BE6A12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1755A541256EC55A00BE6A12 /* Friend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,9 +221,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1755A523256EC03C00BE6A12 /* HomeViewController.swift in Sources */,
+				1755A523256EC03C00BE6A12 /* HomeTableViewController.swift in Sources */,
 				1755A51F256EC03C00BE6A12 /* AppDelegate.swift in Sources */,
 				1755A521256EC03C00BE6A12 /* SceneDelegate.swift in Sources */,
+				1755A542256EC55A00BE6A12 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
