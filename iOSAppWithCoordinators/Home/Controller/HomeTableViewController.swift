@@ -8,7 +8,8 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: UITableViewController, Storyboarded {
+    weak var mainCoordinator: MainCoordinator?
     var friendsArray = [Friend]()
     var selectedFriend: Int? = nil
     
@@ -33,17 +34,6 @@ class HomeTableViewController: UITableViewController {
         UserDefaults.standard.setValue(savedData, forKey: "Friends")
     }
     
-    private func configure(friend: Friend, position: Int) {
-        guard let friendTableViewController = UIStoryboard(name: "Friend", bundle: nil).instantiateViewController(identifier: "FriendTableViewController") as? FriendTableViewController else {
-            fatalError("Unable to create FriendTableViewController")
-        }
-        selectedFriend = position
-        friendTableViewController.homeTableViewControllerDelegate = self
-        friendTableViewController.friend = friend
-        
-        navigationController?.pushViewController(friendTableViewController, animated: true)
-    }
-    
     func update(friend: Friend) {
         guard let selectedFriend = selectedFriend else { return }
         friendsArray[selectedFriend] = friend
@@ -57,7 +47,8 @@ class HomeTableViewController: UITableViewController {
         tableView.insertRows(at: [IndexPath(row: friendsArray.count - 1, section: 0)], with: .automatic)
         saveData()
         
-        configure(friend: friend, position: friendsArray.count - 1)
+        selectedFriend = friendsArray.count - 1
+        mainCoordinator?.configure(friend: friend)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,6 +67,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        configure(friend: friendsArray[indexPath.row], position: indexPath.row)
+        selectedFriend = indexPath.row
+        mainCoordinator?.configure(friend: friendsArray[indexPath.row])
     }
 }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class FriendTableViewController: UITableViewController {
-    weak var homeTableViewControllerDelegate: HomeTableViewController?
+class FriendTableViewController: UITableViewController, Storyboarded {
+    weak var mainCoordinator: MainCoordinator?
     var friend: Friend!
     var timeZonesArray = [TimeZone]()
     var selectedTimeZone = 0
@@ -40,12 +40,12 @@ class FriendTableViewController: UITableViewController {
             }
         }
         
-        selectedTimeZone = timeZonesArray.index(of: friend.timeZone) ?? 0
+        selectedTimeZone = timeZonesArray.firstIndex(of: friend.timeZone) ?? 0
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        homeTableViewControllerDelegate?.update(friend: friend)
+        mainCoordinator?.update(friend: friend)
     }
     
     @IBAction func nameChanged(_ sender: UITextField) {
