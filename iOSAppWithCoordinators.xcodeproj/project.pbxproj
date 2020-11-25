@@ -14,6 +14,9 @@
 		1755A528256EC03E00BE6A12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1755A527256EC03E00BE6A12 /* Assets.xcassets */; };
 		1755A52B256EC03E00BE6A12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1755A529256EC03E00BE6A12 /* LaunchScreen.storyboard */; };
 		1755A542256EC55A00BE6A12 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1755A541256EC55A00BE6A12 /* Friend.swift */; };
+		178B539D256ED0E5005686DC /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178B539C256ED0E5005686DC /* FriendTableViewController.swift */; };
+		178B53A2256ED148005686DC /* Friend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 178B53A1256ED148005686DC /* Friend.storyboard */; };
+		178B53A5256ED37D005686DC /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178B53A4256ED37D005686DC /* TextTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		1755A52A256EC03E00BE6A12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1755A52C256EC03E00BE6A12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1755A541256EC55A00BE6A12 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		178B539C256ED0E5005686DC /* FriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
+		178B53A1256ED148005686DC /* Friend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friend.storyboard; sourceTree = "<group>"; };
+		178B53A4256ED37D005686DC /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		1755A51D256EC03C00BE6A12 /* iOSAppWithCoordinators */ = {
 			isa = PBXGroup;
 			children = (
+				178B5397256ED0A5005686DC /* Friend */,
 				1755A538256EC1B400BE6A12 /* Home */,
 				1755A533256EC17F00BE6A12 /* Global */,
 			);
@@ -150,6 +157,48 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		178B5397256ED0A5005686DC /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				178B539B256ED0BC005686DC /* Model */,
+				178B539A256ED0B7005686DC /* View */,
+				178B5399256ED0AF005686DC /* Controller */,
+				178B5398256ED0AA005686DC /* Service */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		178B5398256ED0AA005686DC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		178B5399256ED0AF005686DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				178B539C256ED0E5005686DC /* FriendTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		178B539A256ED0B7005686DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				178B53A1256ED148005686DC /* Friend.storyboard */,
+				178B53A4256ED37D005686DC /* TextTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		178B539B256ED0BC005686DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178B53A2256ED148005686DC /* Friend.storyboard in Resources */,
 				1755A52B256EC03E00BE6A12 /* LaunchScreen.storyboard in Resources */,
 				1755A528256EC03E00BE6A12 /* Assets.xcassets in Resources */,
 				1755A526256EC03C00BE6A12 /* Home.storyboard in Resources */,
@@ -221,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178B53A5256ED37D005686DC /* TextTableViewCell.swift in Sources */,
 				1755A523256EC03C00BE6A12 /* HomeTableViewController.swift in Sources */,
+				178B539D256ED0E5005686DC /* FriendTableViewController.swift in Sources */,
 				1755A51F256EC03C00BE6A12 /* AppDelegate.swift in Sources */,
 				1755A521256EC03C00BE6A12 /* SceneDelegate.swift in Sources */,
 				1755A542256EC55A00BE6A12 /* Friend.swift in Sources */,

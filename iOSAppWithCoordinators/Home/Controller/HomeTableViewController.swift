@@ -32,11 +32,23 @@ class HomeTableViewController: UITableViewController {
         UserDefaults.standard.setValue(savedData, forKey: "Friends")
     }
     
+    private func configure(friend: Friend, position: Int) {
+        guard let friendTableViewController = UIStoryboard(name: "Friend", bundle: nil).instantiateViewController(identifier: "FriendTableViewController") as? FriendTableViewController else {
+            fatalError("Unable to create FriendTableViewController")
+        }
+        friendTableViewController.homeTableViewControllerDelegate = self
+        friendTableViewController.friend = friend
+        
+        navigationController?.pushViewController(friendTableViewController, animated: true)
+    }
+    
     @objc private func addFriend() {
         let friend = Friend()
         friendsArray.append(friend)
         tableView.insertRows(at: [IndexPath(row: friendsArray.count - 1, section: 0)], with: .automatic)
         saveData()
+        
+        configure(friend: friend, position: friendsArray.count - 1)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,5 +61,9 @@ class HomeTableViewController: UITableViewController {
         cell.detailTextLabel?.text = friendsArray[indexPath.row].timeZone.identifier
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        configure(friend: friendsArray[indexPath.row], position: indexPath.row)
     }
 }
